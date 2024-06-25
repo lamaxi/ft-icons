@@ -15,7 +15,7 @@ final class BladeHeroiconsServiceProvider extends ServiceProvider
         $this->registerConfig();
 
         $this->callAfterResolving(Factory::class, function (Factory $factory, Container $container) {
-            $config = $container->make('config')->get('blade-heroicons', []);
+            $config = $container->make('config')->get('ft-icons', []);
 
             $factory->add('heroicons', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
         });
@@ -23,19 +23,19 @@ final class BladeHeroiconsServiceProvider extends ServiceProvider
 
     private function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/blade-heroicons.php', 'blade-heroicons');
+        $this->mergeConfigFrom(__DIR__.'/../config/ft-icons.php', 'ft-icons');
     }
 
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../resources/svg' => public_path('vendor/blade-heroicons'),
-            ], 'blade-heroicons');
+                __DIR__.'/../resources/svg' => public_path('vendor/ft-icons'),
+            ], 'ft-icons');
 
             $this->publishes([
-                __DIR__.'/../config/blade-heroicons.php' => $this->app->configPath('blade-heroicons.php'),
-            ], 'blade-heroicons-config');
+                __DIR__.'/../config/ft-icons.php' => $this->app->configPath('ft-icons.php'),
+            ], 'ft-icons-config');
         }
     }
 }

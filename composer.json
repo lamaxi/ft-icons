@@ -1,12 +1,12 @@
 {
-    "name": "blade-organization/blade-heroicons",
+    "name": "lamaxi/ft-icons",
     "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
     "keywords": ["Blade", "Heroicons", "Laravel"],
-    "homepage": "https://github.com/blade-organization/blade-heroicons",
+    "homepage": "https://github.com/lamaxi/ft-icons",
     "license": "MIT",
     "authors": [
         {
-            "name": "Blade Developer"
+            "name": "Andrii Maksymchuk"
         }
     ],
     "require": {
